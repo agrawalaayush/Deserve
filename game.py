@@ -12,9 +12,13 @@ class Game():
     def getGameStatus(self):
         return self.board.getBoard()
 
+    def add_snake(self, src, dest):
+        self.board.add_snakes(src, dest)
+
     def run(self, noofturn=10):
         player = 1
         turn = 1
+        self.add_snake(14,7)
         while turn <= noofturn:
             self.move(player)
             print ("Game Status %s after move %s" %(self.getGameStatus(), turn))
